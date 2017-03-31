@@ -15,27 +15,7 @@
 # limitations under the License.
 from __future__ import print_function
 
-import sys
-import setuptools
-import subprocess
+from umdpfmt.parser import FortranLexer, FortranParser
 
-def antlr_gen(config):
-    target = '-Dlanguage=Python%d'%(sys.version_info[0])
-    command = ['java', '-jar', 'antlr-4.7-complete.jar', \
-            target, 'umdpfmt/parser/Fortran.g4']
-    subprocess.check_call(command)
-
-
-class AntlrGen(setuptools.Command):
-    description = "Generate Antlr parser"
-    command_name = "antlrgen"
-    user_options = []
-
-    def initialize_options(self):
-        pass
-    def finalize_options(self):
-        pass
-
-    def run(self):
-        antlr_gen(None)
-
+def test_specimens():
+    pass

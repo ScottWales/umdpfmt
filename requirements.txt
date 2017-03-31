@@ -1,2 +1,5 @@
 # Add general dependencies here
 # Optional dependencies e.g. [dev] are added in `setup.cfg`
+
+antlr4-python2-runtime; python_version <  '3.0'
+antlr4-python3-runtime; python_version >= '3.0'

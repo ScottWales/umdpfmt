@@ -25,12 +25,12 @@ Build Instructions
 
 Pip install (into a virtual environment)::
 
-    # TODO
+    # TODO: Upload to PyPI
     pip install umdpfmt
 
 or::
     
-    # TODO
+    # TODO: Support Antlr from $CLASSPATH
     pip install git+https://github.com/ScottWales/umdpfmt
 
 or (for development)::

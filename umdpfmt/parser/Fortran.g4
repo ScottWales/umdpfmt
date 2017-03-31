@@ -1,4 +1,4 @@
-grammar fortran;
+grammar Fortran;
 
 r: 'hello' ID ;
 ID: [a-z]+ ;
