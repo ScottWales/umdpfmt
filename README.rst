@@ -25,14 +25,17 @@ Build Instructions
 
 Pip install (into a virtual environment)::
 
+    # TODO
     pip install umdpfmt
 
 or::
     
+    # TODO
     pip install git+https://github.com/ScottWales/umdpfmt
 
 or (for development)::
 
     git checkout git+https://github.com/ScottWales/umdpfmt
     cd umdpfmt
+    wget http://www.antlr.org/download/antlr-4.7-complete.jar
     pip install -e '.[dev]'
