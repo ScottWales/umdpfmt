@@ -6,7 +6,7 @@ python:
 install:
     - wget http://www.antlr.org/download/antlr-4.7-complete.jar
     - pip install --upgrade pip pytest coverage codecov
-    - pip install .[dev]
+    - pip install -v .[dev]
 script:
     - coverage run --source umdpfmt -m py.test
 after_success:
