@@ -20,6 +20,7 @@ import setuptools
 import subprocess
 
 def antlr_gen(config):
+    print("running antlr4")
     target = '-Dlanguage=Python%d'%(sys.version_info[0])
     command = ['java', '-jar', 'antlr-4.7-complete.jar', \
             target, 'umdpfmt/parser/Fortran.g4']
