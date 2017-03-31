@@ -15,7 +15,22 @@
 # limitations under the License.
 from __future__ import print_function
 
-from umdpfmt.parser import FortranLexer, FortranParser
+from umdpfmt.parser import *
 
-def test_specimens():
-    pass
+import os.path
+from antlr4 import *
+
+def pytest_generate_tests(metafunc):
+    if 'specimen' in metafunc.fixturenames:
+        specimendir = os.path.join(os.path.dirname(__file__), 'specimens')
+        (_, _, specimens) = next(os.walk(specimendir))
+        metafunc.parametrize('specimen', [os.path.join(specimendir, x) for x in specimens])
+
+def test_parse_specimen(specimen):
+    fs = FileStream(specimen)
+    lexer = FortranLexer(fs)
+    tokens = CommonTokenStream(lexer)
+    parser = FortranParser(tokens)
+    parser._errHandler = BailErrorStrategy()
+    tree = parser.fortranFile()
+
